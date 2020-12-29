@@ -21,9 +21,9 @@ public class ReadWriteController {
     @RequestMapping(value = "/dynamicreadwrite",method = RequestMethod.GET)
     public void dynamicreadwrite(){
         readWriteService.masterRead("1");
-        readWriteService.slave1Read("1");
-        readWriteService.slave2Read("1");
-        readWriteService.slave3Read("1");
+        readWriteService.slave1Read("2");
+        readWriteService.slave2Read("3");
+        readWriteService.slave3Read("4");
     }
 
 }

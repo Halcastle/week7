@@ -1,13 +1,9 @@
 package com.geekStudy.week7.aspect;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.hibernate.engine.spi.SessionImplementor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
@@ -24,8 +20,6 @@ import com.geekStudy.week7.config.DynamicDataSourceContextHolder;
 @Component
 public class DynamicDataSourceAspect {
 
-    @PersistenceContext
-    private EntityManager entityManager;
 
     private static final Logger logger = LoggerFactory.getLogger(DynamicDataSourceAspect.class);
 
@@ -57,8 +51,5 @@ public class DynamicDataSourceAspect {
         logger.info("切完");
         //方法执行完毕之后，销毁当前数据源信息，进行垃圾回收。
         DynamicDataSourceContextHolder.clearDataSourceType();
-        SessionImplementor session = entityManager.unwrap(SessionImplementor.class);
-        //最关键的一句代码， 手动断开连接，不用重新设置 ，会自动重新设置连接。
-        session.disconnect();
     }
 }

@@ -9,4 +9,6 @@ public interface IShoppingCustomerInfoService {
 	List<ShoppingCustomerInfo> findAll();
 	
 	ShoppingCustomerInfo findBySerialno(String id);
+	
+	
 }
