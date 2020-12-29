@@ -10,9 +10,9 @@ logging.path=G:/logs
 #spring.jpa.show-sql=false
 #主库配置,写数据
 spring.datasource.master.key=master
-spring.datasource.master.url=jdbc:mysql://localhost:3306/happycode?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+spring.datasource.master.url=jdbc:mysql://localhost:3306/db?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
 spring.datasource.master.username=root
-spring.datasource.master.password=root
+spring.datasource.master.password=
 spring.datasource.master.initialSize=5
 spring.datasource.master.minIdle=5
 spring.datasource.master.maxActive=20
@@ -41,4 +41,3 @@ mybatis.mapper-locations: classpath:mapper/*.xml
 mybatis.type-aliases-package: com.geekStudy.week7.entity
 #开启驼峰命名
 mybatis.configuration.map-underscore-to-camel-case: true
-mybatis.configuration.log-impl= org.apache.ibatis.logging.stdout.StdOutImpl

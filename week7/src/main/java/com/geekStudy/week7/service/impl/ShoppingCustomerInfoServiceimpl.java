@@ -25,4 +25,14 @@ public class ShoppingCustomerInfoServiceimpl implements IShoppingCustomerInfoSer
 		return customerInfoMapper.findBySerialno(id);
 	}
 
+	@Override
+	public int insertCustomer(ShoppingCustomerInfo customerInfo) {
+		return customerInfoMapper.insertCustomer(customerInfo);
+	}
+
+	@Override
+	public int updateCustomerBySerialno(ShoppingCustomerInfo customerInfo) {
+		return customerInfoMapper.updateCustomerBySerialno(customerInfo);
+	}
+
 }

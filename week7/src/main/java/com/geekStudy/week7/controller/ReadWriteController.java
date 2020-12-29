@@ -18,12 +18,28 @@ public class ReadWriteController {
     ReadWriteService readWriteService;
 
 
-    @RequestMapping(value = "/dynamicreadwrite",method = RequestMethod.GET)
-    public void dynamicreadwrite(){
+    @RequestMapping(value = "/dynamicread",method = RequestMethod.GET)
+    public void dynamicread(){
         readWriteService.masterRead("1");
-        readWriteService.slave1Read("2");
-        readWriteService.slave2Read("3");
-        readWriteService.slave3Read("4");
+        readWriteService.slave1Read("1");
+        readWriteService.slave2Read("1");
+        readWriteService.slave3Read("1");
+    }
+
+    @RequestMapping(value = "/dynamicwrite",method = RequestMethod.GET)
+    public void dynamicwrite(){
+        readWriteService.masterInsert();
+        readWriteService.slave1Insert();
+        readWriteService.slave2Insert();
+        readWriteService.slave3Insert();
+    }
+
+    @RequestMapping(value = "/dynamicupdate",method = RequestMethod.GET)
+    public void dynamicupdate(){
+        readWriteService.masterUpdate();
+        readWriteService.slave1Update();
+        readWriteService.slave2Update();
+        readWriteService.slave3Update();
     }
 
 }

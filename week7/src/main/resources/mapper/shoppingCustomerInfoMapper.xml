@@ -7,6 +7,22 @@
     <select id="findBySerialno" parameterType="String" resultType="ShoppingCustomerInfo">
         SELECT * FROM shopping_customer_info where id = #{id}
     </select>
+
+    <insert id="insertCustomer" parameterType="ShoppingCustomerInfo">
+        insert into shopping_customer_info(name,gender,phone,address,photourl,status) value (#{name},#{gender},#{phone},#{address},#{photourl},#{status})
+    </insert>
+
+    <update id="updateCustomerBySerialno" parameterType="ShoppingCustomerInfo">
+    update shopping_customer_info
+    set
+    name = #{name},
+    gender = #{gender},
+    address = #{address},
+    photourl = #{photourl},
+    status = #{status}
+    where
+    id = #{id}
+</update>
 </mapper>
 
 <!-- 
